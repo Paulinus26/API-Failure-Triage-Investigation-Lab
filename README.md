@@ -22,6 +22,7 @@ Stack: Node.js, Express.js, Postman, VS Code
 **Case: Invalid input crashing the API**
 
 ![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png) 
+
 *Figure 1: Initial 500 Internal Server Error response as seen from the client-side (Postman).*
 
 
@@ -32,6 +33,7 @@ A user reported that submitting certain values in the User ID field caused the a
 From the server logs in the terminal, the request was reaching the endpoint but failing during processing. The error showed that the system expected a numeric value but received a string, which triggered an unhandled exception.
 
 ![Image 1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/8cc2a91df4bd5445d4057d7d53e1809d30bf9a59/Error%20message.png) 
+
 *Figure 2: VS Code Terminal Stack Trace identifying the code failure at server.js:15*
 
 **Root Cause**
@@ -43,6 +45,7 @@ Added validation to check input type before processing. The API now returns a st
 * **After:** 400 Bad Request with clear message
 
 ![image 2](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/f619b29e18f62215096215266eeaa89001e4dff4/Bad%20request.png) 
+
 *Figure 3: 400-bad-request-fix.png*
 
 #### 2. 403 Forbidden
@@ -67,6 +70,7 @@ Required authorization header not included in the request.
 • After: 200 OK
 
 ![image3](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/de783d360b5b83c6ad78bb6cb336f22039e7db59/Image%20403%20forbidden.png) 
+
 *Figure 4: Successful 200 OK response after applying correct User-Role parameters*
 
 #### 3. High Latency / Timeout Behavior
@@ -95,6 +99,7 @@ No immediate failure to fix, but clearly identified as a performance issue.
 * **Problem:** Unacceptable response time (10.07s)
 
 ![image5](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/0e359416793657f950c8e891e65c6887f53f9e04/performance%20latency.png) 
+
 *Figure 5: Postman Metrics showing 10.07s response time (High Latency)*
 
 ## Conclusion
