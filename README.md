@@ -7,6 +7,7 @@ The focus is not just on identifying failures, but on tracing them through logs,
 Stack: Node.js, Express.js, Postman, VS Code
 
 ### What this project demonstrates
+
 • Handling real API failures (500, 403, latency issues)
 • Reading and interpreting server-side behavior
 • Using Postman to inspect requests and headers
@@ -31,9 +32,11 @@ Added validation to check input type before processing.
 The API now returns a structured response instead of crashing.
 
 • Before: 500 Internal Server Error
+
 ![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png)
 
 • After: 400 Bad Request with clear message
+
 ![image 2](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/f619b29e18f62215096215266eeaa89001e4dff4/Bad%20request.png)
 
 2. 403 Forbidden
