@@ -18,10 +18,12 @@ Stack: Node.js, Express.js, Postman, VS Code
 ### Investigation Scenarios
 
 #### 1. 500 Internal Server Error
-![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png) 
-*Figure 1: 500-error-server-crash.png.*
 
 **Case: Invalid input crashing the API**
+
+![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png) 
+*Figure 1: Initial 500 Internal Server Error response as seen from the client-side (Postman).*
+
 
 **Issue**
 A user reported that submitting certain values in the User ID field caused the application to fail.
