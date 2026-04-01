@@ -31,6 +31,7 @@ Added validation to check input type before processing.
 The API now returns a structured response instead of crashing.
 
 • Before: 500 Internal Server Error
+![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png)
 • After: 400 Bad Request with clear message
 
 Suggested screenshot
