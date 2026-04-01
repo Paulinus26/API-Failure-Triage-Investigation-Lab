@@ -15,6 +15,8 @@ Stack: Node.js, Express.js, Postman, VS Code
 • Writing simple, useful root cause summaries
 ### Investigation Scenarios
 1. 500 Internal Server Error
+![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png) 
+Figure 1: 500-error-server-crash.png.
 
 ### Case: Invalid input crashing the API
 
@@ -23,6 +25,9 @@ A user reported that submitting certain values in the User ID field caused the a
 
 ## Investigation
 From the server logs in the terminal, the request was reaching the endpoint but failing during processing. The error showed that the system expected a numeric value but received a string, which triggered an unhandled exception.
+
+![Image1.0](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/8cc2a91df4bd5445d4057d7d53e1809d30bf9a59/Error%20message.png) 
+Figure 2: VS Code Terminal Stack Trace identifying the code failure at server.js:15
 
 ### Root Cause
 No input validation on the User ID field.
@@ -33,12 +38,10 @@ The API now returns a structured response instead of crashing.
 
 • Before: 500 Internal Server Error
 
-![image1](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/bf9260dd3764298254c95d829e5b7579a1ce96af/internal-error-response.png)
-Figure 1: Postman showing the 500 error and HTML wall of text.
-
 • After: 400 Bad Request with clear message
 
-![image 2](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/f619b29e18f62215096215266eeaa89001e4dff4/Bad%20request.png)
+![image 2](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/f619b29e18f62215096215266eeaa89001e4dff4/Bad%20request.png) 
+Figure 3: 400-bad-request-fix.png
 
 2. 403 Forbidden
 
@@ -65,7 +68,8 @@ Required authorization header not included in the request.
 
 • After: 200 OK
 
-![image3](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/de783d360b5b83c6ad78bb6cb336f22039e7db59/Image%20403%20forbidden.png)
+![image3](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/de783d360b5b83c6ad78bb6cb336f22039e7db59/Image%20403%20forbidden.png) 
+Figure 4: Successful 200 OK response after applying correct User-Role parameters
 
 3. High Latency / Timeout Behavior
 
