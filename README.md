@@ -59,13 +59,9 @@ Required authorization header not included in the request.
 ## Resolution
 
 • Confirmed required header format
-
 • Retested with User-Role: Admin
-
 • Access restored with correct request
-
 • Before: 403 Forbidden
-
 • After: 200 OK
 
 ![image3](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/de783d360b5b83c6ad78bb6cb336f22039e7db59/Image%20403%20forbidden.png) 
@@ -98,5 +94,13 @@ No immediate failure to fix, but clearly identified as a performance issue.
 • Status: 200 OK
 • Problem: unacceptable response time
 
-Suggested screenshot
-Postman response showing 200 OK with response time >10s
+![image5](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/0e359416793657f950c8e891e65c6887f53f9e04/performance%20latency.png) 
+Figure 5: Postman Metrics showing 10.07s response time (High Latency)
+
+## Conclusion
+
+This project reflects how I approach support work when things break in production. I start with what the user is seeing, reproduce it, and follow the request through until the failure point is clear. From there, I focus on giving a direct explanation of what went wrong and what needs to change.
+
+Across these scenarios, the issues were different, but the approach stayed consistent. Check the request, read the logs, confirm the behavior, and avoid assumptions. Some fixes were immediate, like input validation. Others required escalation, such as performance bottlenecks. In both cases, the goal is to remove ambiguity and move the issue forward with useful context.
+
+The outcome is not just a resolved ticket, but a clearer system. Fewer repeated issues, better error handling, and more predictable API behavior. That is the standard I aim for in a support role.
