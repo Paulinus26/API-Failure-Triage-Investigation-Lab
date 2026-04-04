@@ -13,8 +13,6 @@ Tools Used: Node.js, Express.js, Postman, VS Code
 * Turning vague customer complaints into clear technical findings
 * Writing simple, useful root cause summaries
 
----
----
 
 ### System Architecture
 
