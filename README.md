@@ -16,13 +16,13 @@ Tools Used: Node.js, Express.js, Postman, VS Code
 ---
 ---
 
-## System Architecture
+### System Architecture
 
 The diagram below outlines the request flow and key components involved in this API. It shows how data moves from the client through the API server to the database, along with where validation, authorization, and processing occur.
 
 It also highlights common failure points (500 errors, 403 access issues, and latency bottlenecks) and how they are investigated using logs and request inspection.
 
-![Architecture Diagram](<your-image-link>)
+![Figure 0](https://raw.githubusercontent.com/Paulinus26/API-Failure-Triage-Investigation-Lab/2b7cd987044ec3f460f7a2988f47d9127463469f/Architecture%20image.png)
 *Figure 0: API Triage and Support Investigation Architecture*
 
 ### Investigation Scenarios
